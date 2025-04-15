@@ -494,3 +494,28 @@ p {
   animation-delay: 0.4s;
   opacity: 0;
 }
+
+/* Academic Services Section */
+.services-section {
+  margin: 2rem 0;
+}
+
+.service-item {
+  display: flex;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem;
+  border-radius: 8px;
+  background-color: var(--light-gray);
+  transition: var(--transition);
+}
+
+.service-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow);
+}
+
+.service-item p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
