@@ -1,22 +1,40 @@
 /* Google Fonts - 优化加载 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap');
 
 :root {
+  /* Apple-inspired color palette */
   --primary-color: #1d1d1f;
-  --secondary-color: #0071e3;
+  --secondary-color: #06c;
   --accent-color: #f5f5f7;
-  --highlight-color: rgba(0, 113, 227, 0.1);
-  --author-highlight-color: rgba(88, 86, 214, 0.15);  /* Apple's purple color */
+  --highlight-color: rgba(0, 102, 204, 0.1);
+  --author-highlight-color: rgba(88, 86, 214, 0.15);
   --text-color: #1d1d1f;
+  --text-secondary: #86868b;
   --light-gray: #f5f5f7;
   --medium-gray: #e8e8ed;
   --white: #ffffff;
-  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1.0);
   --gradient-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(250, 250, 252, 0.8));
-  --card-border: 1px solid rgba(0, 0, 0, 0.05);
-  --card-radius: 16px;
-  --small-radius: 12px;
+  --card-border: 1px solid rgba(0, 0, 0, 0.04);
+  --card-radius: 14px;
+  --small-radius: 10px;
+  
+  /* Badge colors - using Apple's palette */
+  --venue-badge-bg: #34C759; /* Apple green */ 
+  --venue-badge-text: white;
+  --year-badge-bg: #34C759; /* Apple green */ 
+  --year-badge-text: white;
+  --award-badge-bg: #ff9500; /* Apple orange */
+  --award-badge-text: white;
+  
+  /* Social link colors */
+  --social-badge-bg: #007AFF; /* Apple blue - matches the modern, clean aesthetic */
+  --social-badge-text: white;
+  
+  /* Publication link color */
+  --publication-link-bg: #5AC8FA; /* Light blue */
+  --publication-link-text: white;
 }
 
 /* 基础样式 */
@@ -49,18 +67,22 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-  line-height: 1.6;
+  font-family: 'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  line-height: 1.47059;
   color: var(--text-color);
   background-color: var(--white);
   max-width: 100%;
   overflow-x: hidden;
-  text-rendering: optimizeSpeed; /* 优化文本渲染性能 */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.022em;
+  font-synthesis: none;
 }
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -83,7 +105,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: #2b82e8;
+  color: #007aff;
   text-decoration: none;
   outline: none;
 }
@@ -95,36 +117,39 @@ a:focus-visible {
 
 name {
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.08349;
+  font-weight: 600;
   color: var(--primary-color);
   display: block;
-  margin-bottom: 0.8rem;
-  letter-spacing: -0.5px;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.003em;
 }
 
 heading {
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
-  font-size: 2rem;
+  font-size: 32px;
+  line-height: 1.125;
   font-weight: 600;
   color: var(--primary-color);
   display: block;
-  margin: 3rem 0 2rem;
+  margin: 4rem 0 2rem;
   padding-bottom: 0.8rem;
   border-bottom: 1px solid var(--medium-gray);
   position: relative;
+  letter-spacing: -0.002em;
 }
 
 papertitle {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 21px;
+  line-height: 1.28349;
   color: var(--primary-color);
   display: block;
   margin-bottom: 0.8rem;
   position: relative;
   padding-left: 0;
-  line-height: 1.4;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.021em;
 }
 
 strong {
@@ -133,9 +158,11 @@ strong {
 
 p {
   margin-bottom: 1.2rem;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 17px;
+  line-height: 1.47059;
+  color: var(--text-secondary);
+  font-weight: 400;
+  letter-spacing: -0.022em;
 }
 
 /* Header Section */
@@ -144,7 +171,7 @@ p {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 5rem 0;
+  margin: 6rem 0;
   gap: 4rem;
   position: relative;
 }
@@ -152,7 +179,7 @@ p {
 .profile-section::after {
   content: '';
   position: absolute;
-  bottom: -2.5rem;
+  bottom: -3rem;
   left: 0;
   width: 100%;
   height: 1px;
@@ -165,7 +192,7 @@ p {
 
 .profile-image {
   flex: 2;
-  max-width: 320px;
+  max-width: 300px;
   position: relative;
 }
 
@@ -174,7 +201,7 @@ p {
   height: auto;
   border-radius: var(--card-radius);
   box-shadow: var(--box-shadow);
-  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
 .profile-image img:hover {
@@ -185,25 +212,25 @@ p {
 .author-highlight {
   background-color: var(--author-highlight-color);
   padding: 0.2rem 0.5rem;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 6px;
+  font-weight: 500;
   color: #5856D6;  /* Apple's purple */
 }
 
 /* Academic Services Section */
 .services-section {
-  margin: 3rem 0;
+  margin: 4rem 0;
 }
 
 .service-item {
   display: flex;
   margin-bottom: 1.5rem;
-  padding: 1.5rem;
+  padding: 1.8rem;
   border-radius: var(--card-radius);
   background-color: var(--white);
   transition: var(--transition);
   border: var(--card-border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
 .service-item:hover {
@@ -213,7 +240,7 @@ p {
 
 .service-item p {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 17px;
   color: var(--primary-color);
 }
 
@@ -221,42 +248,44 @@ p {
 .social-links {
   display: flex;
   gap: 1rem;
-  margin: 1.8rem 0;
+  margin: 2rem 0;
 }
 
 .social-links a {
-  padding: 0.6rem 1.2rem;
-  border-radius: 20px;
-  background-color: var(--light-gray);
-  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  padding: 0.6rem 1.3rem;
+  border-radius: 980px; /* Apple's typical button radius */
+  transition: all 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
   display: inline-flex;
   align-items: center;
   font-weight: 500;
-  color: var(--primary-color);
+  color: var(--social-badge-text);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: var(--social-badge-bg);
+  font-size: 14px;
+  letter-spacing: -0.016em;
 }
 
 .social-links a:hover {
-  background-color: var(--secondary-color);
-  color: var(--white);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+  filter: brightness(105%);
 }
 
 /* Publications Section */
 .publications-section {
-  margin: 3rem 0;
+  margin: 4rem 0;
 }
 
 .publication-item {
   display: flex;
   margin-bottom: 2.5rem;
-  padding: 2rem;
+  padding: 1.8rem 2rem;
   border-radius: var(--card-radius);
   border: var(--card-border);
   background-color: var(--white);
   gap: 2rem;
-  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
 .publication-item:last-child {
@@ -278,7 +307,7 @@ p {
 .publication-image img {
   width: 100%;
   height: 160px;
-  transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 0.6s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
 .publication-image img:hover {
@@ -287,7 +316,7 @@ p {
 
 .publication-info {
   flex: 3;
-  line-height: 1.6;
+  line-height: 1.47059;
 }
 
 .publication-info br {
@@ -310,19 +339,20 @@ p {
 .publication-links a {
   display: inline-block;
   padding: 0.4rem 1rem;
-  background-color: var(--light-gray);
-  border-radius: 20px;
-  font-size: 0.9rem;
-  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  border-radius: 980px; /* Apple's typical button radius */
+  font-size: 14px;
+  transition: all 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
   font-weight: 500;
-  color: var(--primary-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: var(--publication-link-bg);
+  color: var(--publication-link-text);
+  letter-spacing: -0.016em;
 }
 
 .publication-links a:hover {
-  background-color: var(--secondary-color);
-  color: var(--white);
-  box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
+  filter: brightness(105%);
 }
 
 .venue-badge, .year-badge, .award-badge {
@@ -330,51 +360,62 @@ p {
   padding: 0.3rem 0.8rem;
   margin-top: 0.4rem;
   margin-bottom: 0.5rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  border-radius: 980px; /* Apple's typical button radius */
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.016em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.33s cubic-bezier(0.28, 0.11, 0.32, 1), box-shadow 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+.venue-badge:hover, .year-badge:hover, .award-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  filter: brightness(105%);
 }
 
 .venue-badge {
-  background-color: var(--light-gray);
+  background-color: var(--venue-badge-bg);
   margin-right: 0.5rem;
-  color: var(--primary-color);
-  border: 1px solid var(--medium-gray);
+  color: var(--venue-badge-text);
+  border: none;
 }
 
 .year-badge {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--year-badge-bg);
+  color: var(--year-badge-text);
+  border: none;
 }
 
 .award-badge {
-  background-color: #ff453a;
-  color: white;
+  background-color: var(--award-badge-bg);
+  color: var(--award-badge-text);
   margin-left: 0.5rem;
   animation: pulse 2s infinite;
+  border: none;
 }
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(255, 69, 58, 0.4);
+    box-shadow: 0 0 0 0 rgba(255, 149, 0, 0.4);
   }
   70% {
-    box-shadow: 0 0 0 8px rgba(255, 69, 58, 0);
+    box-shadow: 0 0 0 8px rgba(255, 149, 0, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(255, 69, 58, 0);
+    box-shadow: 0 0 0 0 rgba(255, 149, 0, 0);
   }
 }
 
 /* Footer */
 .footer {
-  margin-top: 5rem;
+  margin-top: 6rem;
   padding: 3rem 0;
   text-align: right;
-  font-size: 0.9rem;
-  color: #86868b;
+  font-size: 14px;
+  color: var(--text-secondary);
   position: relative;
+  letter-spacing: -0.016em;
 }
 
 .footer::before {
@@ -409,10 +450,10 @@ p {
 
 .nav-logo a {
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
-  font-size: 1.6rem;
+  font-size: 24px;
   font-weight: 600;
   color: var(--primary-color);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.022em;
 }
 
 .nav-links {
@@ -425,6 +466,8 @@ p {
   padding: 0.5rem 0;
   font-weight: 500;
   color: var(--primary-color);
+  font-size: 14px;
+  letter-spacing: -0.016em;
 }
 
 .nav-links a::after {
@@ -435,7 +478,7 @@ p {
   bottom: -2px;
   left: 0;
   background-color: var(--secondary-color);
-  transition: width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: width 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
 .nav-links a:hover::after {
@@ -471,7 +514,7 @@ p {
   font-size: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   opacity: 0.9;
-  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
 .back-to-top a:hover {
@@ -483,11 +526,13 @@ p {
 /* Responsive Design */
 @media (max-width: 768px) {
   name {
-    font-size: 2.2rem;
+    font-size: 36px;
+    line-height: 1.1;
   }
   
   heading {
-    font-size: 1.8rem;
+    font-size: 28px;
+    line-height: 1.14286;
   }
   
   .profile-section {
@@ -528,17 +573,17 @@ p {
 }
 
 .fade-in {
-  animation: fadeIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  animation: fadeIn 1s cubic-bezier(0.28, 0.11, 0.32, 1) forwards;
 }
 
 .fade-in-delay-1 {
-  animation: fadeIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  animation: fadeIn 1s cubic-bezier(0.28, 0.11, 0.32, 1) forwards;
   animation-delay: 0.3s;
   opacity: 0;
 }
 
 .fade-in-delay-2 {
-  animation: fadeIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  animation: fadeIn 1s cubic-bezier(0.28, 0.11, 0.32, 1) forwards;
   animation-delay: 0.6s;
   opacity: 0;
 }
