@@ -14,6 +14,36 @@ document.addEventListener('DOMContentLoaded', function() {
   // 获取所有有ID的部分用于滚动监听
   const sections = document.querySelectorAll('section[id]');
   
+  // 主题切换
+  const themeToggle = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+  const storageKey = 'preferred-theme';
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+      themeToggle && (themeToggle.textContent = '☀️');
+      const metaThemes = document.querySelectorAll('meta[name="theme-color"]');
+      metaThemes.forEach(m => m.setAttribute('content', '#0b0b0c'));
+    } else {
+      root.removeAttribute('data-theme');
+      themeToggle && (themeToggle.textContent = '🌙');
+      const metaThemes = document.querySelectorAll('meta[name="theme-color"]');
+      metaThemes.forEach(m => m.setAttribute('content', '#ffffff'));
+    }
+  }
+
+  const savedTheme = localStorage.getItem(storageKey);
+  applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+  themeToggle && themeToggle.addEventListener('click', function() {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    localStorage.setItem(storageKey, next);
+    applyTheme(next);
+  });
+  
   // 防抖函数 - 提高滚动事件性能
   function debounce(func, wait = 20, immediate = true) {
     let timeout;
@@ -68,6 +98,15 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // 初始化调用一次以设置初始状态
   handleScroll();
+
+   // 所有外部链接新窗口打开且安全
+   const anchorElements = document.querySelectorAll('a[href^="http"], a[target="_blank"]');
+   anchorElements.forEach(a => {
+     if (!a.href.includes(window.location.hostname)) {
+       a.setAttribute('target', '_blank');
+       a.setAttribute('rel', 'noopener noreferrer');
+     }
+   });
   
   // 清理函数 - 防止内存泄漏
   function cleanup() {

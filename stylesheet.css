@@ -35,6 +35,35 @@
   /* Publication link color */
   --publication-link-bg: #5AC8FA; /* Light blue */
   --publication-link-text: white;
+  
+  /* Publication sizing */
+  --pub-item-padding-y: 1.2rem;
+  --pub-item-padding-x: 1.4rem;
+  --pub-item-gap: 1rem;
+  --pub-item-margin-bottom: 1.5rem;
+  --pub-image-max-width: 200px;
+  --pub-image-height: 130px;
+  --pub-papertitle-size: 19px;
+  --pub-links-gap: 0.6rem;
+  --pub-links-font-size: 13px;
+  --pub-badge-font-size: 13px;
+}
+
+/* Dark theme variables */
+:root[data-theme="dark"] {
+  --primary-color: #f5f5f7;
+  --secondary-color: #0a84ff;
+  --accent-color: #1c1c1e;
+  --highlight-color: rgba(10, 132, 255, 0.15);
+  --author-highlight-color: rgba(94, 92, 230, 0.25);
+  --text-color: #f5f5f7;
+  --text-secondary: #a1a1a6;
+  --light-gray: #1c1c1e;
+  --medium-gray: #2c2c2e;
+  --white: #0b0b0c;
+  --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  --card-border: 1px solid rgba(255, 255, 255, 0.06);
+  --publication-link-bg: #0a84ff;
 }
 
 /* 基础样式 */
@@ -42,6 +71,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Anchor offset for sticky nav */
+section[id] {
+  scroll-margin-top: 90px;
 }
 
 /* 添加无障碍跳过链接 */
@@ -70,7 +104,7 @@ body {
   font-family: 'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
   line-height: 1.47059;
   color: var(--text-color);
-  background-color: var(--white);
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(0,0,0,0.03), rgba(0,0,0,0)) no-repeat, var(--white);
   max-width: 100%;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
@@ -115,6 +149,11 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
+button:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
 name {
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
   font-size: 48px;
@@ -142,11 +181,11 @@ heading {
 
 papertitle {
   font-weight: 600;
-  font-size: 21px;
+  font-size: var(--pub-papertitle-size);
   line-height: 1.28349;
   color: var(--primary-color);
   display: block;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   position: relative;
   padding-left: 0;
   letter-spacing: -0.021em;
@@ -278,12 +317,12 @@ p {
 
 .publication-item {
   display: flex;
-  margin-bottom: 2.5rem;
-  padding: 1.8rem 2rem;
+  margin-bottom: var(--pub-item-margin-bottom);
+  padding: var(--pub-item-padding-y) var(--pub-item-padding-x);
   border-radius: var(--card-radius);
   border: var(--card-border);
   background-color: var(--white);
-  gap: 2rem;
+  gap: var(--pub-item-gap);
   transition: all 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
@@ -293,20 +332,20 @@ p {
 }
 
 .publication-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: var(--box-shadow);
 }
 
 .publication-image {
   flex: 1;
-  max-width: 240px;
+  max-width: var(--pub-image-max-width);
   overflow: hidden;
   border-radius: var(--small-radius);
 }
 
 .publication-image img {
   width: 100%;
-  height: 160px;
+  height: var(--pub-image-height);
   transition: transform 0.6s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
@@ -320,7 +359,7 @@ p {
 }
 
 .publication-info br {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   display: block;
   content: "";
 }
@@ -330,17 +369,17 @@ p {
 }
 
 .publication-links {
-  margin-top: 1.2rem;
+  margin-top: 0.8rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: var(--pub-links-gap);
 }
 
 .publication-links a {
   display: inline-block;
-  padding: 0.4rem 1rem;
+  padding: 0.35rem 0.9rem;
   border-radius: 980px; /* Apple's typical button radius */
-  font-size: 14px;
+  font-size: var(--pub-links-font-size);
   transition: all 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
   font-weight: 500;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
@@ -357,11 +396,11 @@ p {
 
 .venue-badge, .year-badge, .award-badge {
   display: inline-block;
-  padding: 0.3rem 0.8rem;
-  margin-top: 0.4rem;
-  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.7rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.35rem;
   border-radius: 980px; /* Apple's typical button radius */
-  font-size: 14px;
+  font-size: var(--pub-badge-font-size);
   font-weight: 500;
   letter-spacing: -0.016em;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
@@ -434,6 +473,7 @@ p {
   position: sticky;
   top: 0;
   background: rgba(255, 255, 255, 0.85);
+  background: color-mix(in srgb, var(--white) 85%, transparent);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 100;
@@ -517,6 +557,33 @@ p {
   transition: all 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
+/* Theme toggle */
+.theme-toggle {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .back-to-top a:hover {
   opacity: 1;
   transform: translateY(-5px);
@@ -547,12 +614,12 @@ p {
   
   .publication-item {
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1.1rem 1.2rem;
   }
   
   .publication-image {
     max-width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
   
   .nav-container {

@@ -8,20 +8,55 @@
   <meta name="description" content="Xi Peng - PhD Student at UNC Chapel Hill researching VR/AR, perceptual computer graphics, computational imaging, and machine learning">
   <meta name="keywords" content="Xi Peng, UNC Chapel Hill, VR, AR, computer graphics, HCI, machine learning">
   <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
   
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="Xi Peng | PhD Student">
   <meta property="og:description" content="PhD Student at UNC Chapel Hill researching VR/AR, perceptual computer graphics, computational imaging, and machine learning">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="images/Xi Peng.jpg">
+  <meta property="og:image:alt" content="Portrait of Xi Peng">
+  <meta property="og:url" content="https://seexpeng.github.io/">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Xi Peng | PhD Student at UNC Chapel Hill">
+  <meta name="twitter:description" content="VR/AR, perceptual computer graphics, computational imaging, and machine learning">
+  <meta name="twitter:image" content="images/Xi Peng.jpg">
   
   <title>Xi Peng | PhD Student at UNC Chapel Hill</title>
 
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" href="images/Icon.jpg">
   
+  <!-- Font performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
   <!-- Preload important resources -->
   <link rel="preload" href="images/Xi Peng.jpg" as="image">
   <link rel="preload" href="stylesheet.css" as="style">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Xi Peng",
+    "url": "https://seexpeng.github.io/",
+    "image": "https://seexpeng.github.io/images/Xi%20Peng.jpg",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "University of North Carolina at Chapel Hill"
+    },
+    "email": "mailto:xipeng@cs.unc.edu",
+    "sameAs": [
+      "https://scholar.google.com/citations?hl=en&user=lTj6Dp4AAAAJ"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -40,13 +75,14 @@
           <a href="#publications" aria-label="Publications section">Publications</a>
           <a href="#services" aria-label="Academic Services section">Services</a>
         </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme" type="button">🌙</button>
       </div>
     </nav>
 
     <!-- Profile Section -->
     <section id="about" class="profile-section fade-in">
       <div class="profile-info">
-        <name>Xi Peng</name>
+        <name role="heading" aria-level="1">Xi Peng</name>
         <p>I am a first year Ph.D. student at UNC Chapel Hill advised by <a href="https://www.cs.unc.edu/~cpk/">Prof. Praneeth Chakravarthula</a>. 
           In my master's study at NYU, I was fortunately working at <a href="https://www.immersivecomputinglab.org/">NYU Immersive Computing Lab</a> advised by <a href="https://qisun.me/">Prof. Qi Sun</a>. My current research revolves around VR/AR, perceptual computer graphics, computational imaging, and machine learning.
         </p>
@@ -58,20 +94,20 @@
       </div>
       
       <div class="profile-image">
-        <img src="images/Xi Peng.jpg" alt="Xi Peng Profile Photo" width="300" height="300">
+        <img src="images/Xi Peng.jpg" alt="Xi Peng Profile Photo" width="300" height="300" decoding="async">
       </div>
     </section>
 
     <!-- Publications Section -->
     <section id="publications" class="publications-section fade-in-delay-1">
-      <heading>Publications</heading>
+      <heading role="heading" aria-level="2">Publications</heading>
 
       <div class="publication-item">
         <div class="publication-image">
-          <img src="images/acoustic_foveation.png" alt="Acoustic Foveation research visualization" width="240" height="160">
+          <img src="images/acoustic_foveation.png" alt="Acoustic Foveation research visualization" width="240" height="160" loading="lazy" decoding="async">
         </div>
         <div class="publication-info">
-          <papertitle>Perceptually-Guided Acoustic "Foveation"</papertitle>
+          <papertitle role="heading" aria-level="3">Perceptually-Guided Acoustic "Foveation"</papertitle>
           <br>
           <span class="author-highlight">Xi Peng</span>, 
           <a href="https://kenchen10.github.io/">Kenneth Chen</a>, 
@@ -90,10 +126,10 @@
       
       <div class="publication-item">
         <div class="publication-image">
-          <img src="images/Neural-Acoustic-Fields.png" alt="Neural Acoustic Fields research visualization" width="240" height="160">
+          <img src="images/Neural-Acoustic-Fields.png" alt="Neural Acoustic Fields research visualization" width="240" height="160" loading="lazy" decoding="async">
         </div>
         <div class="publication-info">
-          <papertitle>Multimodal Neural Acoustic Fields for Immersive Mixed Reality</papertitle>
+          <papertitle role="heading" aria-level="3">Multimodal Neural Acoustic Fields for Immersive Mixed Reality</papertitle>
           <br>
           Guansen Tong*, Jonathan Leung*, <span class="author-highlight">Xi Peng</span>, Haosheng Shi, Liujie Zheng, Shengze Wang,
           Arryn Carlos O'Brien, Ashley Paula-Ann Neall, Grace Fei, Martim Gaspar,
@@ -127,10 +163,10 @@
 
       <div class="publication-item">
         <div class="publication-image">
-          <img src="images/multisensory_reaction.png" alt="Visual Auditory Integration research" width="240" height="160">
+          <img src="images/multisensory_reaction.png" alt="Visual Auditory Integration research" width="240" height="160" loading="lazy" decoding="async">
         </div>
         <div class="publication-info">
-          <papertitle>Measuring and Predicting Multisensory Reaction Latency: A Probabilistic Model for Visual-Auditory Integration</papertitle>
+          <papertitle role="heading" aria-level="3">Measuring and Predicting Multisensory Reaction Latency: A Probabilistic Model for Visual-Auditory Integration</papertitle>
           <br>
           <span class="author-highlight">Xi Peng</span>, <a href="https://yunxiangzhang.github.io/">Yunxiang Zhang</a>,
           <a href="https://people.mpi-inf.mpg.de/~djimenez/">Daniel Jiménez Navarro</a>,
@@ -149,10 +185,10 @@
 
       <div class="publication-item">
         <div class="publication-image">
-          <img src="images/saccadic-response-acceleration.jpg" alt="Saccadic Response research visualization" width="240" height="160">
+          <img src="images/saccadic-response-acceleration.jpg" alt="Saccadic Response research visualization" width="240" height="160" loading="lazy" decoding="async">
         </div>
         <div class="publication-info">
-          <papertitle>Accelerating Saccadic Response through Spatial and Temporal Cross-Modal Misalignments</papertitle>
+          <papertitle role="heading" aria-level="3">Accelerating Saccadic Response through Spatial and Temporal Cross-Modal Misalignments</papertitle>
           <br>
           <a href="https://people.mpi-inf.mpg.de/~djimenez/">Daniel Jiménez Navarro</a>,
           <span class="author-highlight">Xi Peng</span>, <a href="https://yunxiangzhang.github.io/">Yunxiang Zhang</a>,
@@ -172,10 +208,10 @@
 
       <div class="publication-item">
         <div class="publication-image">
-          <img src="images/improved-xr-force-interface.jpg" alt="Force-Aware VR Interface visualization" width="240" height="160">
+          <img src="images/improved-xr-force-interface.jpg" alt="Force-Aware VR Interface visualization" width="240" height="160" loading="lazy" decoding="async">
         </div>
         <div class="publication-info">
-          <papertitle>May the Force Be with You: Dexterous Finger Force-Aware VR Interface</papertitle>
+          <papertitle role="heading" aria-level="3">May the Force Be with You: Dexterous Finger Force-Aware VR Interface</papertitle>
           <br>
           Fengze Zhang*, <a href="https://yunxiangzhang.github.io/">Yunxiang Zhang*</a>,
           <span class="author-highlight">Xi Peng</span>, Sky Achitoff,
@@ -195,7 +231,7 @@
 
     <!-- Academic Services Section -->
     <section id="services" class="services-section fade-in-delay-1">
-      <heading>Academic Services</heading>
+      <heading role="heading" aria-level="2">Academic Services</heading>
       <div class="service-item">
         <p><strong>Conference Reviewer</strong>: <span class="venue-badge">ISMAR</span></p>
       </div>
