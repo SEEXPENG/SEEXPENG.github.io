@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // 获取导航链接
   const navLinks = document.querySelectorAll('.nav-links a');
   
+  // 获取导航栏
+  const mainNav = document.querySelector('.main-nav');
+  
   // 获取所有有ID的部分用于滚动监听
   const sections = document.querySelectorAll('section[id]');
   
@@ -62,6 +65,13 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // 处理滚动事件 - 用于显示/隐藏返回顶部按钮和高亮当前导航
   const handleScroll = debounce(function() {
+    // 导航栏滚动效果
+    if (window.pageYOffset > 20) {
+      mainNav.classList.add('scrolled');
+    } else {
+      mainNav.classList.remove('scrolled');
+    }
+    
     // 返回顶部按钮显示逻辑
     if (window.pageYOffset > 300) {
       backToTopButton.style.opacity = '1';
@@ -98,6 +108,26 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // 初始化调用一次以设置初始状态
   handleScroll();
+  
+  // Scroll reveal for publication items
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, observerOptions);
+  
+  // Observe all publication items and year sections
+  document.querySelectorAll('.publication-item, .year-section').forEach(item => {
+    item.classList.add('scroll-reveal');
+    scrollObserver.observe(item);
+  });
 
    // 所有外部链接新窗口打开且安全
    const anchorElements = document.querySelectorAll('a[href^="http"], a[target="_blank"]');

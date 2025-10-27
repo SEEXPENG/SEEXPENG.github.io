@@ -23,9 +23,9 @@
   /* Badge colors - using Apple's palette */
   --venue-badge-bg: #34C759; /* Apple green */ 
   --venue-badge-text: white;
-  --year-badge-bg: #34C759; /* Apple green */ 
+  --year-badge-bg: #8E8E93; /* Apple gray - more subtle for year */ 
   --year-badge-text: white;
-  --award-badge-bg: #ff9500; /* Apple orange */
+  --award-badge-bg: #FF9500; /* Apple orange */
   --award-badge-text: white;
   
   /* Social link colors */
@@ -36,17 +36,19 @@
   --publication-link-bg: #5AC8FA; /* Light blue */
   --publication-link-text: white;
   
-  /* Publication sizing */
-  --pub-item-padding-y: 1.2rem;
-  --pub-item-padding-x: 1.4rem;
+  /* Publication sizing - More compact for Apple-style */
+  --pub-item-padding-y: 0.9rem;
+  --pub-item-padding-x: 1.1rem;
   --pub-item-gap: 1rem;
-  --pub-item-margin-bottom: 1.5rem;
-  --pub-image-max-width: 200px;
-  --pub-image-height: 130px;
-  --pub-papertitle-size: 19px;
-  --pub-links-gap: 0.6rem;
-  --pub-links-font-size: 13px;
-  --pub-badge-font-size: 13px;
+  --pub-item-margin-bottom: 0.7rem;
+  --pub-image-max-width: 160px;
+  --pub-image-height: 100px;
+  --pub-papertitle-size: 16px;
+  --pub-links-gap: 0.5rem;
+  --pub-links-font-size: 12px;
+  --pub-badge-font-size: 11px;
+  --pub-author-font-size: 14px;
+  --pub-line-height: 1.4;
 }
 
 /* Dark theme variables */
@@ -64,6 +66,28 @@
   --box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   --card-border: 1px solid rgba(255, 255, 255, 0.06);
   --publication-link-bg: #0a84ff;
+}
+
+/* Dark theme specific overrides */
+:root[data-theme="dark"] .publication-item {
+  background: linear-gradient(135deg, #1c1c1e 0%, rgba(28, 28, 30, 0.8) 100%);
+}
+
+:root[data-theme="dark"] .service-item {
+  background: linear-gradient(135deg, #1c1c1e 0%, rgba(28, 28, 30, 0.8) 100%);
+}
+
+:root[data-theme="dark"] body {
+  background: radial-gradient(ellipse 1400px 900px at 10% -15%, rgba(10, 132, 255, 0.05), rgba(0,0,0,0)) no-repeat, #0b0b0c;
+}
+
+:root[data-theme="dark"] .main-nav {
+  background: rgba(28, 28, 30, 0.72);
+  box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .main-nav.scrolled {
+  box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.08), 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* 基础样式 */
@@ -104,7 +128,7 @@ body {
   font-family: 'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
   line-height: 1.47059;
   color: var(--text-color);
-  background: radial-gradient(1200px 800px at 10% -10%, rgba(0,0,0,0.03), rgba(0,0,0,0)) no-repeat, var(--white);
+  background: radial-gradient(ellipse 1400px 900px at 10% -15%, rgba(0, 102, 204, 0.03), rgba(0,0,0,0)) no-repeat, var(--white);
   max-width: 100%;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
@@ -172,7 +196,7 @@ heading {
   font-weight: 600;
   color: var(--primary-color);
   display: block;
-  margin: 4rem 0 2rem;
+  margin: 3rem 0 1.5rem;
   padding-bottom: 0.8rem;
   border-bottom: 1px solid var(--medium-gray);
   position: relative;
@@ -182,10 +206,10 @@ heading {
 papertitle {
   font-weight: 600;
   font-size: var(--pub-papertitle-size);
-  line-height: 1.28349;
+  line-height: 1.25;
   color: var(--primary-color);
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
   position: relative;
   padding-left: 0;
   letter-spacing: -0.021em;
@@ -210,7 +234,7 @@ p {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 6rem 0;
+  margin: 5rem 0 4rem;
   gap: 4rem;
   position: relative;
 }
@@ -218,7 +242,7 @@ p {
 .profile-section::after {
   content: '';
   position: absolute;
-  bottom: -3rem;
+  bottom: -2rem;
   left: 0;
   width: 100%;
   height: 1px;
@@ -258,28 +282,28 @@ p {
 
 /* Academic Services Section */
 .services-section {
-  margin: 4rem 0;
+  margin: 3rem 0;
 }
 
 .service-item {
   display: flex;
-  margin-bottom: 1.5rem;
-  padding: 1.8rem;
-  border-radius: var(--card-radius);
-  background-color: var(--white);
+  margin-bottom: 1rem;
+  padding: 1.3rem 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--white) 0%, rgba(245, 245, 247, 0.5) 100%);
   transition: var(--transition);
   border: var(--card-border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .service-item:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--box-shadow);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .service-item p {
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
   color: var(--primary-color);
 }
 
@@ -312,19 +336,56 @@ p {
 
 /* Publications Section */
 .publications-section {
-  margin: 4rem 0;
+  margin: 3rem 0;
+}
+
+.year-section {
+  margin-top: 2.5rem;
+}
+
+.year-section:first-child {
+  margin-top: 0;
+}
+
+.year-divider {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+  display: inline-block;
+  letter-spacing: -0.019em;
 }
 
 .publication-item {
   display: flex;
   margin-bottom: var(--pub-item-margin-bottom);
   padding: var(--pub-item-padding-y) var(--pub-item-padding-x);
-  border-radius: var(--card-radius);
+  border-radius: 12px;
   border: var(--card-border);
-  background-color: var(--white);
+  background: linear-gradient(135deg, var(--white) 0%, rgba(245, 245, 247, 0.5) 100%);
   gap: var(--pub-item-gap);
   transition: all 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.publication-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 102, 204, 0.03), transparent);
+  transition: left 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+.publication-item:hover::before {
+  left: 100%;
 }
 
 .publication-item:last-child {
@@ -332,8 +393,9 @@ p {
 }
 
 .publication-item:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--box-shadow);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 102, 204, 0.15);
 }
 
 .publication-image {
@@ -341,6 +403,8 @@ p {
   max-width: var(--pub-image-max-width);
   overflow: hidden;
   border-radius: var(--small-radius);
+  position: relative;
+  z-index: 1;
 }
 
 .publication-image img {
@@ -355,21 +419,26 @@ p {
 
 .publication-info {
   flex: 3;
-  line-height: 1.47059;
+  line-height: var(--pub-line-height);
+  font-size: var(--pub-author-font-size);
+  color: var(--text-secondary);
+  position: relative;
+  z-index: 1;
 }
 
 .publication-info br {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.15rem;
   display: block;
   content: "";
 }
 
 .publication-info a, .publication-info .author-highlight {
-  margin-right: 0.2rem;
+  margin-right: 0.15rem;
+  font-size: var(--pub-author-font-size);
 }
 
 .publication-links {
-  margin-top: 0.8rem;
+  margin-top: 0.3rem;
   display: flex;
   flex-wrap: wrap;
   gap: var(--pub-links-gap);
@@ -377,33 +446,33 @@ p {
 
 .publication-links a {
   display: inline-block;
-  padding: 0.35rem 0.9rem;
+  padding: 0.3rem 0.75rem;
   border-radius: 980px; /* Apple's typical button radius */
   font-size: var(--pub-links-font-size);
   transition: all 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
   font-weight: 500;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   background-color: var(--publication-link-bg);
   color: var(--publication-link-text);
   letter-spacing: -0.016em;
 }
 
 .publication-links a:hover {
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
   filter: brightness(105%);
 }
 
 .venue-badge, .year-badge, .award-badge {
   display: inline-block;
-  padding: 0.25rem 0.7rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  margin-top: 0.15rem;
+  margin-bottom: 0.15rem;
   border-radius: 980px; /* Apple's typical button radius */
   font-size: var(--pub-badge-font-size);
   font-weight: 500;
   letter-spacing: -0.016em;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: transform 0.33s cubic-bezier(0.28, 0.11, 0.32, 1), box-shadow 0.33s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
@@ -469,16 +538,19 @@ p {
 
 /* Navigation */
 .main-nav {
-  padding: 1.2rem 0;
+  padding: 1rem 0;
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.85);
-  background: color-mix(in srgb, var(--white) 85%, transparent);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
   z-index: 100;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
-  border-radius: 0 0 var(--small-radius) var(--small-radius);
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+.main-nav.scrolled {
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .nav-container {
@@ -614,12 +686,17 @@ p {
   
   .publication-item {
     flex-direction: column;
-    padding: 1.1rem 1.2rem;
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.6rem;
   }
   
   .publication-image {
     max-width: 100%;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .publication-image img {
+    height: 140px;
   }
   
   .nav-container {
@@ -653,4 +730,17 @@ p {
   animation: fadeIn 1s cubic-bezier(0.28, 0.11, 0.32, 1) forwards;
   animation-delay: 0.6s;
   opacity: 0;
+}
+
+/* Scroll reveal animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.28, 0.11, 0.32, 1),
+              transform 0.6s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
