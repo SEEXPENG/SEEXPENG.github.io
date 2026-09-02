@@ -10,36 +10,28 @@
   <meta name="robots" content="index, follow">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
-  
-  <!-- Open Graph / Social Media Meta Tags -->
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
   <meta property="og:title" content="Xi Peng | PhD Student">
   <meta property="og:description" content="PhD Student at UNC Chapel Hill researching VR/AR, perceptual computer graphics, computational imaging, and machine learning">
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/Xi Peng.jpg">
   <meta property="og:image:alt" content="Portrait of Xi Peng">
   <meta property="og:url" content="https://seexpeng.github.io/">
-  
-  <!-- Twitter Card -->
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Xi Peng | PhD Student at UNC Chapel Hill">
   <meta name="twitter:description" content="VR/AR, perceptual computer graphics, computational imaging, and machine learning">
   <meta name="twitter:image" content="images/Xi Peng.jpg">
-  
+
   <title>Xi Peng | PhD Student at UNC Chapel Hill</title>
 
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" href="images/Icon.jpg">
-  
-  <!-- Font performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Preload important resources -->
+
   <link rel="preload" href="images/Xi Peng.jpg" as="image">
   <link rel="preload" href="stylesheet.css" as="style">
 
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -61,250 +53,243 @@
 
 <body>
   <div class="container">
-    <!-- Skip to main content for accessibility -->
     <a href="#about" class="skip-link">Skip to main content</a>
-    
-    <!-- Navigation -->
-    <nav class="main-nav fade-in" aria-label="Main navigation">
+
+    <nav class="main-nav" aria-label="Main navigation">
       <div class="nav-container">
-        <div class="nav-logo">
-          <a href="#" aria-label="Home">Xi Peng</a>
-        </div>
+        <a class="nav-logo" href="#" aria-label="Home">Xi Peng</a>
         <div class="nav-links">
-          <a href="#about" aria-label="About section">About</a>
-          <a href="#publications" aria-label="Publications section">Publications</a>
-          <a href="#services" aria-label="Academic Services section">Services</a>
+          <a href="#about">About</a>
+          <a href="#publications">Publications</a>
+          <a href="#services">Services</a>
         </div>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme" type="button">🌙</button>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme" type="button">Dark</button>
       </div>
     </nav>
 
-    <!-- Profile Section -->
-    <section id="about" class="profile-section fade-in">
+    <section id="about" class="profile-section">
       <div class="profile-info">
-        <name role="heading" aria-level="1">Xi Peng</name>
-        <p>I am a first year Ph.D. student at UNC Chapel Hill advised by <a href="https://www.cs.unc.edu/~cpk/">Prof. Praneeth Chakravarthula</a>. 
-          In my master's study at NYU, I was fortunately working at <a href="https://www.immersivecomputinglab.org/">NYU Immersive Computing Lab</a> advised by <a href="https://qisun.me/">Prof. Qi Sun</a>. My current research revolves around VR/AR, perceptual computer graphics, computational imaging, and machine learning.
+        <h1>Xi Peng</h1>
+        <p class="lede">Ph.D. student at UNC Chapel Hill, advised by <a href="https://www.cs.unc.edu/~cpk/">Prof.&nbsp;Praneeth Chakravarthula</a>. M.S. at NYU with <a href="https://qisun.me/">Prof.&nbsp;Qi Sun</a> at the <a href="https://www.immersivecomputinglab.org/">Immersive Computing Lab</a>.</p>
+        <p class="research">VR/AR, perceptual computer graphics, computational imaging, and machine learning.</p>
+        <p class="contact">
+          <a href="https://scholar.google.com/citations?hl=en&user=lTj6Dp4AAAAJ">Scholar</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="mailto:xipeng@cs.unc.edu">Email</a>
         </p>
-        
-        <div class="social-links">
-          <a href="https://scholar.google.com/citations?hl=en&user=lTj6Dp4AAAAJ" aria-label="Google Scholar profile">Google Scholar</a>
-          <a href="mailto:xipeng@cs.unc.edu" aria-label="Send email">Email</a>
-        </div>
       </div>
-      
       <div class="profile-image">
-        <img src="images/Xi Peng.jpg" alt="Xi Peng Profile Photo" width="300" height="300" decoding="async">
+        <img src="images/Xi Peng.jpg" alt="Portrait of Xi Peng" width="160" height="160" decoding="async">
       </div>
     </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="publications-section fade-in-delay-1">
-      <heading role="heading" aria-level="2">Publications</heading>
+    <section id="publications" class="publications-section">
+      <h2>Publications</h2>
 
-      <!-- 2026 Publications -->
       <div class="year-section">
-        <div class="year-divider">2026</div>
+        <h3 class="year-label">2026</h3>
 
-      <div class="publication-item">
-        <div class="publication-image">
-          <img src="images/depth-overdriving.png" alt="Overdriving Visual Depth Perception research visualization" width="240" height="160" loading="lazy" decoding="async">
-        </div>
-        <div class="publication-info">
-          <papertitle role="heading" aria-level="3">Overdriving Visual Depth Perception via Sound Modulation in VR</papertitle>
-          <br>
-          <a href="https://people.mpi-inf.mpg.de/~djimenez/">Daniel Jiménez Navarro</a>,
-          <a href="https://colingroth.github.io/">Colin Groth</a>,
-          <span class="author-highlight">Xi Peng</span>,
-          <a href="https://qisun.me">Qi Sun</a>,
-          <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula</a>,
-          <a href="https://people.mpi-inf.mpg.de/~karol/">Karol Myszkowski</a>,
-          <a href="https://people.mpi-inf.mpg.de/~hpseidel/">Hans-Peter Seidel</a>,
-          <a href="https://ana-serrano.github.io/">Ana Serrano</a>
-          <br>
-          <span class="venue-badge">TVCG</span> <span class="year-badge">2026</span>
-          <br>
-          <div class="publication-links">
+        <article class="paper">
+          <div class="paper-image">
+            <img src="images/depth-overdriving.png" alt="Overdriving Visual Depth Perception research visualization" width="240" height="160" loading="lazy" decoding="async">
           </div>
-        </div>
-      </div>
+          <div class="paper-body">
+            <h4 class="paper-title">Overdriving Visual Depth Perception via Sound Modulation in VR</h4>
+            <p class="paper-authors">
+              <a href="https://people.mpi-inf.mpg.de/~djimenez/">Daniel Jiménez Navarro</a>,
+              <a href="https://colingroth.github.io/">Colin Groth</a>,
+              <strong class="me">Xi Peng</strong>,
+              <a href="https://qisun.me">Qi Sun</a>,
+              <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula</a>,
+              <a href="https://people.mpi-inf.mpg.de/~karol/">Karol Myszkowski</a>,
+              <a href="https://people.mpi-inf.mpg.de/~hpseidel/">Hans-Peter Seidel</a>,
+              <a href="https://ana-serrano.github.io/">Ana Serrano</a>
+            </p>
+            <p class="paper-venue">TVCG</p>
+          </div>
+        </article>
       </div>
 
-      <!-- 2025 Publications -->
       <div class="year-section">
-        <div class="year-divider">2025</div>
-      
-      <div class="publication-item">
-        <div class="publication-image">
-          <img src="images/Speed_Perception.png" alt="Speed Perception research visualization" width="240" height="160" loading="lazy" decoding="async">
-        </div>
-        <div class="publication-info">
-          <papertitle role="heading" aria-level="3">Why slow feels fast and fast feels slow: Evaluating and predicting speed misperception</papertitle>
-          <br>
-          <span class="author-highlight">Xi Peng</span>, <a href="https://colingroth.github.io/">Colin Groth</a>, <a href="https://people.mpi-inf.mpg.de/~djimenez/">Daniel Jimenez-Navarro</a>, <a href="https://zihaozou.github.io//">Zihao Zou</a>, Yan Zhu, <a href="https://ana-serrano.github.io/">Ana Serrano</a>, <a href="https://people.mpi-inf.mpg.de/~karol/">Karol Myszkowski</a>, <a href="https://qisun.me">Qi Sun</a>, <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula</a>
-          <br>
-          <span class="venue-badge">ISMAR</span> <span class="year-badge">2025</span>
-          <br>
-          <div class="publication-links">
-            <a href="data/papers/25_ISMAR_Speed_Perception__Camera_Ready.pdf">Paper</a>
+        <h3 class="year-label">2025</h3>
+
+        <article class="paper">
+          <div class="paper-image">
+            <img src="images/Speed_Perception.png" alt="Speed Perception research visualization" width="240" height="160" loading="lazy" decoding="async">
           </div>
-        </div>
+          <div class="paper-body">
+            <h4 class="paper-title">Why slow feels fast and fast feels slow: Evaluating and predicting speed misperception</h4>
+            <p class="paper-authors">
+              <strong class="me">Xi Peng</strong>,
+              <a href="https://colingroth.github.io/">Colin Groth</a>,
+              <a href="https://people.mpi-inf.mpg.de/~djimenez/">Daniel Jimenez-Navarro</a>,
+              <a href="https://zihaozou.github.io//">Zihao Zou</a>,
+              Yan Zhu,
+              <a href="https://ana-serrano.github.io/">Ana Serrano</a>,
+              <a href="https://people.mpi-inf.mpg.de/~karol/">Karol Myszkowski</a>,
+              <a href="https://qisun.me">Qi Sun</a>,
+              <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula</a>
+            </p>
+            <p class="paper-venue">ISMAR</p>
+            <p class="paper-links">
+              <a href="data/papers/25_ISMAR_Speed_Perception__Camera_Ready.pdf">PDF</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="paper">
+          <div class="paper-image">
+            <img src="images/acoustic_foveation.png" alt="Acoustic Foveation research visualization" width="240" height="160" loading="lazy" decoding="async">
+          </div>
+          <div class="paper-body">
+            <h4 class="paper-title">Perceptually-Guided Acoustic "Foveation"</h4>
+            <p class="paper-authors">
+              <strong class="me">Xi Peng</strong>,
+              <a href="https://kenchen10.github.io/">Kenneth Chen</a>,
+              <a href="https://iranroman.github.io/">Iran Roman</a>,
+              <a href="https://engineering.nyu.edu/faculty/juan-pablo-bello">Juan Pablo Bello</a>,
+              <a href="https://qisun.me">Qi Sun*</a>,
+              <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula*</a>
+            </p>
+            <p class="paper-venue">IEEE VR</p>
+            <p class="paper-links">
+              <a href="data/papers/Perceptually Guided Acoustic Foveation.pdf">PDF</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="paper">
+          <div class="paper-image">
+            <img src="images/Neural-Acoustic-Fields.png" alt="Neural Acoustic Fields research visualization" width="240" height="160" loading="lazy" decoding="async">
+          </div>
+          <div class="paper-body">
+            <h4 class="paper-title">Multimodal Neural Acoustic Fields for Immersive Mixed Reality</h4>
+            <p class="paper-authors">
+              Guansen Tong*, Jonathan Leung*,
+              <strong class="me">Xi Peng</strong>,
+              Haosheng Shi, Liujie Zheng,
+              <a href="https://mcmvmc.github.io/">Shengze Wang</a>,
+              Arryn Carlos O'Brien, Ashley Paula-Ann Neall, Grace Fei, Martim Gaspar,
+              <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula</a>
+            </p>
+            <p class="paper-venue">TVCG <span class="award">IEEE VR Best Paper Honorable Mention</span></p>
+            <p class="paper-links">
+              <a href="data/papers/Neural Acoustic Fields for Mixed Reality.pdf">PDF</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="paper">
+          <div class="paper-image">
+            <img src="images/High-Speed Dynamic 3D Imaging with Sensor Fusion Splatting.png" alt="3D Imaging with Sensor Fusion Splatting visualization" width="240" height="160" loading="lazy" decoding="async">
+          </div>
+          <div class="paper-body">
+            <h4 class="paper-title">High-Speed Dynamic 3D Imaging with Sensor Fusion Splatting</h4>
+            <p class="paper-authors">
+              Zihao Zou, Ziyuan Qu,
+              <strong class="me">Xi Peng</strong>,
+              Vivek Boominathan, Adithya Pediredla,
+              <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula</a>
+            </p>
+            <p class="paper-venue">arXiv</p>
+            <p class="paper-links">
+              <a href="https://arxiv.org/abs/2502.04630">PDF</a>
+            </p>
+          </div>
+        </article>
       </div>
 
-
-      <div class="publication-item">
-        <div class="publication-image">
-          <img src="images/acoustic_foveation.png" alt="Acoustic Foveation research visualization" width="240" height="160" loading="lazy" decoding="async">
-        </div>
-        <div class="publication-info">
-          <papertitle role="heading" aria-level="3">Perceptually-Guided Acoustic "Foveation"</papertitle>
-          <br>
-          <span class="author-highlight">Xi Peng</span>, 
-          <a href="https://kenchen10.github.io/">Kenneth Chen</a>, 
-          <a href="https://iranroman.github.io/">Iran Roman</a>, 
-          <a href="https://engineering.nyu.edu/faculty/juan-pablo-bello">Juan Pablo Bello</a>, 
-          <a href="https://qisun.me">Qi Sun*</a>, 
-          <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula*</a>
-          <br>
-          <span class="venue-badge">IEEE VR</span> <span class="year-badge">2025</span>
-          <br>
-          <div class="publication-links">
-            <a href="data/papers/Perceptually Guided Acoustic Foveation.pdf">Paper</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="publication-item">
-        <div class="publication-image">
-          <img src="images/Neural-Acoustic-Fields.png" alt="Neural Acoustic Fields research visualization" width="240" height="160" loading="lazy" decoding="async">
-        </div>
-        <div class="publication-info">
-          <papertitle role="heading" aria-level="3">Multimodal Neural Acoustic Fields for Immersive Mixed Reality</papertitle>
-          <br>
-          Guansen Tong*, Jonathan Leung*, <span class="author-highlight">Xi Peng</span>, Haosheng Shi, Liujie Zheng, <a href="https://mcmvmc.github.io/">Shengze Wang</a>,
-          Arryn Carlos O'Brien, Ashley Paula-Ann Neall, Grace Fei, Martim Gaspar,
-          <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula</a>
-          <br>
-          <span class="venue-badge">TVCG</span> <span class="year-badge">2025</span> <span class="award-badge">IEEE VR Best Paper Honorable Mention</span>
-          <br>
-          <div class="publication-links">
-            <a href="data/papers/Neural Acoustic Fields for Mixed Reality.pdf">Paper</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="publication-item">
-        <div class="publication-image">
-          <img src="images/High-Speed Dynamic 3D Imaging with Sensor Fusion Splatting.png" alt="3D Imaging with Sensor Fusion Splatting visualization" width="240" height="160" loading="lazy" decoding="async">
-        </div>
-        <div class="publication-info">
-          <papertitle>High-Speed Dynamic 3D Imaging with Sensor Fusion Splatting</papertitle>
-          <br>
-          Zihao Zou, Ziyuan Qu, <span class="author-highlight">Xi Peng</span>, Vivek Boominathan, Adithya Pediredla, 
-          <a href="https://www.cs.unc.edu/~cpk/">Praneeth Chakravarthula</a>
-          <br>
-          <span class="venue-badge">arXiv</span> <span class="year-badge">2025</span>
-          <br>
-          <div class="publication-links">
-            <a href="https://arxiv.org/abs/2502.04630">Paper</a>
-          </div>
-        </div>
-      </div>
-      </div>
-      
-      <!-- 2024 Publications -->
       <div class="year-section">
-        <div class="year-divider">2024</div>
+        <h3 class="year-label">2024</h3>
 
-      <div class="publication-item">
-        <div class="publication-image">
-          <img src="images/multisensory_reaction.png" alt="Visual Auditory Integration research" width="240" height="160" loading="lazy" decoding="async">
-        </div>
-        <div class="publication-info">
-          <papertitle role="heading" aria-level="3">Measuring and Predicting Multisensory Reaction Latency: A Probabilistic Model for Visual-Auditory Integration</papertitle>
-          <br>
-          <span class="author-highlight">Xi Peng</span>, <a href="https://yunxiangzhang.github.io/">Yunxiang Zhang</a>,
-          <a href="https://people.mpi-inf.mpg.de/~djimenez/">Daniel Jiménez Navarro</a>,
-          <a href="https://ana-serrano.github.io/">Ana Serrano</a>,
-          <a href="https://people.mpi-inf.mpg.de/~karol/">Karol Myszkowski</a>,
-          <a href="https://qisun.me">Qi Sun</a>
-          <br>
-          <span class="venue-badge">TVCG</span> <span class="year-badge">2024</span>
-          <br>
-          <div class="publication-links">
-            <a href="data/papers/Measuring_and_Predicting_Multisensory_Reaction_Latency__A_Probabilistic_Model_for_Visual_Auditory_Integration__Camera_Ready_.pdf">Paper</a>
-            <a href="https://www.immersivecomputinglab.org/research/">Project Page</a>
+        <article class="paper">
+          <div class="paper-image">
+            <img src="images/multisensory_reaction.png" alt="Visual Auditory Integration research" width="240" height="160" loading="lazy" decoding="async">
           </div>
-        </div>
-      </div>
+          <div class="paper-body">
+            <h4 class="paper-title">Measuring and Predicting Multisensory Reaction Latency: A Probabilistic Model for Visual-Auditory Integration</h4>
+            <p class="paper-authors">
+              <strong class="me">Xi Peng</strong>,
+              <a href="https://yunxiangzhang.github.io/">Yunxiang Zhang</a>,
+              <a href="https://people.mpi-inf.mpg.de/~djimenez/">Daniel Jiménez Navarro</a>,
+              <a href="https://ana-serrano.github.io/">Ana Serrano</a>,
+              <a href="https://people.mpi-inf.mpg.de/~karol/">Karol Myszkowski</a>,
+              <a href="https://qisun.me">Qi Sun</a>
+            </p>
+            <p class="paper-venue">TVCG</p>
+            <p class="paper-links">
+              <a href="data/papers/Measuring_and_Predicting_Multisensory_Reaction_Latency__A_Probabilistic_Model_for_Visual_Auditory_Integration__Camera_Ready_.pdf">PDF</a>
+              <span class="sep" aria-hidden="true">/</span>
+              <a href="https://www.immersivecomputinglab.org/research/">Project</a>
+            </p>
+          </div>
+        </article>
 
-      <div class="publication-item">
-        <div class="publication-image">
-          <img src="images/saccadic-response-acceleration.jpg" alt="Saccadic Response research visualization" width="240" height="160" loading="lazy" decoding="async">
-        </div>
-        <div class="publication-info">
-          <papertitle role="heading" aria-level="3">Accelerating Saccadic Response through Spatial and Temporal Cross-Modal Misalignments</papertitle>
-          <br>
-          <a href="https://people.mpi-inf.mpg.de/~djimenez/">Daniel Jiménez Navarro</a>,
-          <span class="author-highlight">Xi Peng</span>, <a href="https://yunxiangzhang.github.io/">Yunxiang Zhang</a>,
-          <a href="https://people.mpi-inf.mpg.de/~karol/">Karol Myszkowski</a>,
-          <a href="https://people.mpi-inf.mpg.de/~hpseidel/">Hans-Peter Seidel</a>,
-          <a href="https://qisun.me">Qi Sun</a>,
-          <a href="https://ana-serrano.github.io/">Ana Serrano</a>
-          <br>
-          <span class="venue-badge">SIGGRAPH</span> <span class="year-badge">2024</span>
-          <br>
-          <div class="publication-links">
-            <a href="https://avsaccadeaccel.mpi-inf.mpg.de/resource/paper.pdf">Paper</a>
-            <a href="https://avsaccadeaccel.mpi-inf.mpg.de/">Project Page</a>
+        <article class="paper">
+          <div class="paper-image">
+            <img src="images/saccadic-response-acceleration.jpg" alt="Saccadic Response research visualization" width="240" height="160" loading="lazy" decoding="async">
           </div>
-        </div>
-      </div>
+          <div class="paper-body">
+            <h4 class="paper-title">Accelerating Saccadic Response through Spatial and Temporal Cross-Modal Misalignments</h4>
+            <p class="paper-authors">
+              <a href="https://people.mpi-inf.mpg.de/~djimenez/">Daniel Jiménez Navarro</a>,
+              <strong class="me">Xi Peng</strong>,
+              <a href="https://yunxiangzhang.github.io/">Yunxiang Zhang</a>,
+              <a href="https://people.mpi-inf.mpg.de/~karol/">Karol Myszkowski</a>,
+              <a href="https://people.mpi-inf.mpg.de/~hpseidel/">Hans-Peter Seidel</a>,
+              <a href="https://qisun.me">Qi Sun</a>,
+              <a href="https://ana-serrano.github.io/">Ana Serrano</a>
+            </p>
+            <p class="paper-venue">SIGGRAPH</p>
+            <p class="paper-links">
+              <a href="https://avsaccadeaccel.mpi-inf.mpg.de/resource/paper.pdf">PDF</a>
+              <span class="sep" aria-hidden="true">/</span>
+              <a href="https://avsaccadeaccel.mpi-inf.mpg.de/">Project</a>
+            </p>
+          </div>
+        </article>
 
-      <div class="publication-item">
-        <div class="publication-image">
-          <img src="images/improved-xr-force-interface.jpg" alt="Force-Aware VR Interface visualization" width="240" height="160" loading="lazy" decoding="async">
-        </div>
-        <div class="publication-info">
-          <papertitle role="heading" aria-level="3">May the Force Be with You: Dexterous Finger Force-Aware VR Interface</papertitle>
-          <br>
-          Fengze Zhang*, <a href="https://yunxiangzhang.github.io/">Yunxiang Zhang*</a>,
-          <span class="author-highlight">Xi Peng</span>, Sky Achitoff,
-          <a href="https://engineering.nyu.edu/faculty/paul-torrens">Paul M. Torrens</a>,
-          <a href="https://qisun.me">Qi Sun</a>
-          <br>
-          <span class="venue-badge">ISMAR</span> <span class="year-badge">2024</span>
-          <br>
-          <div class="publication-links">
-            <a href="https://www.immersivecomputinglab.org/wp-content/uploads/2024/09/emg_force_ui.pdf">Paper</a>
-            <a href="https://www.immersivecomputinglab.org/publication/may-the-force-be-with-you-dexterous-finger-force-aware-xr-interface/">Project Page</a>
-            <a href="https://github.com/NYU-ICL/vr-force-aware-multimodal-interface">Code</a>
+        <article class="paper">
+          <div class="paper-image">
+            <img src="images/improved-xr-force-interface.jpg" alt="Force-Aware VR Interface visualization" width="240" height="160" loading="lazy" decoding="async">
           </div>
-        </div>
-      </div>
+          <div class="paper-body">
+            <h4 class="paper-title">May the Force Be with You: Dexterous Finger Force-Aware VR Interface</h4>
+            <p class="paper-authors">
+              Fengze Zhang*,
+              <a href="https://yunxiangzhang.github.io/">Yunxiang Zhang*</a>,
+              <strong class="me">Xi Peng</strong>,
+              Sky Achitoff,
+              <a href="https://engineering.nyu.edu/faculty/paul-torrens">Paul M. Torrens</a>,
+              <a href="https://qisun.me">Qi Sun</a>
+            </p>
+            <p class="paper-venue">ISMAR</p>
+            <p class="paper-links">
+              <a href="https://www.immersivecomputinglab.org/wp-content/uploads/2024/09/emg_force_ui.pdf">PDF</a>
+              <span class="sep" aria-hidden="true">/</span>
+              <a href="https://www.immersivecomputinglab.org/publication/may-the-force-be-with-you-dexterous-finger-force-aware-xr-interface/">Project</a>
+              <span class="sep" aria-hidden="true">/</span>
+              <a href="https://github.com/NYU-ICL/vr-force-aware-multimodal-interface">Code</a>
+            </p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- Academic Services Section -->
-    <section id="services" class="services-section fade-in-delay-1">
-      <heading role="heading" aria-level="2">Academic Services</heading>
-      <div class="service-item">
-        <p><strong>Conference Reviewer</strong>:   <span class="venue-badge">SIGGRAPH</span> <span class="venue-badge">ISMAR</span></p>
-      </div>
+    <section id="services" class="services-section">
+      <h2>Academic Services</h2>
+      <p class="service-line"><span class="service-role">Conference reviewer</span> SIGGRAPH, ISMAR</p>
     </section>
 
-    <!-- Back to Top Button -->
     <div class="back-to-top">
       <a href="#" title="Back to Top" aria-label="Back to top of page">↑</a>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer fade-in-delay-2">
+    <footer class="footer">
       <p>Template originally from <a href="https://jonbarron.info/">Jon Barron</a>, modified by Xi Peng</p>
     </footer>
   </div>
-  
-  <!-- Defer JavaScript to improve page load speed -->
+
   <script src="script.js" defer></script>
 </body>
 </html>
