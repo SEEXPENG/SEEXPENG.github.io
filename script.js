@@ -108,26 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // 初始化调用一次以设置初始状态
   handleScroll();
-  
-  // Scroll reveal for publication items
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  
-  const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-      }
-    });
-  }, observerOptions);
-  
-  // Observe all publication items and year sections
-  document.querySelectorAll('.publication-item, .year-section').forEach(item => {
-    item.classList.add('scroll-reveal');
-    scrollObserver.observe(item);
-  });
 
    // 所有外部链接新窗口打开且安全
    const anchorElements = document.querySelectorAll('a[href^="http"], a[target="_blank"]');
